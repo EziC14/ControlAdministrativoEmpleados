@@ -1,0 +1,325 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 13-06-2023 a las 09:06:46
+-- Versión del servidor: 10.4.28-MariaDB
+-- Versión de PHP: 8.2.4
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+/*!40101 SET
+@OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET
+@OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET
+@OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+--
+-- Base de datos: `inkasac`
+--
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `empleado`
+--
+CREATE TABLE `empleado` (
+ `IdEmpleado` varchar(10) NOT NULL,
+ `NombreEmpleado` varchar(50) NOT NULL,
+ `ApellidoEmpleado` varchar(50) NOT NULL,
+Pág. 82
+INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS COMPUTACIONALES
+ `Departamento` varchar(50) NOT NULL CHECK (`Departamento` in
+('Automático','Madera')),
+ `ReportTo` varchar(10) DEFAULT NULL,
+ `UserId` varchar(10) NOT NULL,
+ `Password` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci;
+--
+-- Volcado de datos para la tabla `empleado`
+--
+INSERT INTO `empleado` (`IdEmpleado`, `NombreEmpleado`,
+`ApellidoEmpleado`, `Departamento`, `ReportTo`, `UserId`, `Password`)
+VALUES
+('E001', 'Juan', 'Estrada', 'Madera', 'S001', 'N001', 'N001'),
+('E002', 'Esaul', 'Flores', 'Madera', 'S001', 'N002', 'N002'),
+('E003', 'Maricielo', 'Quispe', 'Madera', 'S001', 'N003', 'N003'),
+('E004', 'Jhon', 'Huaman', 'Madera', 'S002', 'N004', 'N004'),
+('E005', 'Yanet', 'Chanli', 'Madera', 'S001', 'N005', 'N005'),
+('E006', 'Piero', 'Mesa', 'Automático', 'S002', 'N006', 'N006'),
+('E007', 'Luz', 'Rasco', 'Automático', 'S002', 'N007', 'N007'),
+('E008', 'Guan', 'Mayma', 'Madera', 'S001', 'N008', 'N008'),
+('E009', 'Andres', 'García', 'Madera', 'S001', 'N009', 'N009'),
+('E010', 'Luis', 'López', 'Automático', 'S002', 'N010', 'N010'),
+('E011', 'Pedro', 'Rodriguez', 'Madera', 'S001', 'N011', 'N011'),
+('E012', 'David', 'Martinez', 'Madera', 'S001', 'N012', 'N012'),
+('E013', 'Alejadndro', 'Gonzales', 'Madera', 'S001', 'N013', 'N013'),
+('E014', 'Manuel', 'Hernandez', 'Madera', 'S001', 'N014', 'N014'),
+('E015', 'José', 'Perez', 'Automático', 'S002', 'N015', 'N015'),
+('E016', 'Antonio', 'Sanchez', 'Automático', 'S002', 'N016', 'N016'),
+('E017', 'Saul', 'Romero', 'Automático', 'S002', 'N017', 'N017'),
+('E018', 'Daniel', 'Torres', 'Automático', 'S002', 'N018', 'N018'),
+('E019', 'María', 'Ramirez', 'Madera', 'S001', 'N019', 'N019'),
+('E020', 'Ana', 'Florez', 'Automático', 'S002', 'N020', 'N020'),
+('E021', 'Laura', 'Morales', 'Automático', 'S002', 'N021', 'N021'),
+('E022', 'Carmen', 'Cruz', 'Madera', 'S001', 'N022', 'N022'),
+('E023', 'Isable', 'Gómez', 'Automático', 'S002', 'N023', 'N023'),
+('E024', 'Patricia', 'Días', 'Madera', 'S001', 'N024', 'N024'),
+('E025', 'Anastacia', 'Ortega', 'Madera', 'S001', 'N025', 'N025'),
+('E026', 'Susana', 'Jiménez', 'Madera', 'S001', 'N026', 'N026'),
+('E027', 'Beatriz', 'Silba', 'Automático', 'S002', 'N027', 'N027'),
+('S001', 'Pilar', 'Sabier', 'Madera', NULL, 'S001', 'C001'),
+('S002', 'Francisco', 'Huapaya', 'Automático', NULL, 'S002', 'C002');
+-- --------------------------------------------------------
+--
+Pág. 83
+INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS COMPUTACIONALES
+-- Estructura de tabla para la tabla `empresacliente`
+--
+CREATE TABLE `empresacliente` (
+ `IdEmpresa` varchar(10) NOT NULL,
+ `NombreEmpresa` varchar(50) NOT NULL,
+ `RUC` varchar(11) DEFAULT NULL CHECK (octet_length(`RUC`) = 11)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci;
+--
+-- Volcado de datos para la tabla `empresacliente`
+--
+INSERT INTO `empresacliente` (`IdEmpresa`, `NombreEmpresa`, `RUC`)
+VALUES
+('CE1001', 'EMPRESA SIERRA DRILLING S.A.C.', '20603578474'),
+('CE1002', 'HIDROGEOTOP E.I.R.L.', '20603326335'),
+('CE1003', 'MILLA SEIS SERVICIOS GENERALES S.R.L.', '20530010172'),
+('CE1004', 'CONSTRUCTORA Y CONSULTORES JR FLOSAN E.I.R.L.',
+'20604031509'),
+('CE1005', 'GOBIERNO REGIONAL DE PIURA', '20484004421'),
+('CE1006', 'GRUPO MALAGA PERFORACIONES E.I.R.L.', '20601362784'),
+('CE1007', 'JCF MINERIA Y CONSTRUCCION S.A.C.', '20601508444'),
+('CE1008', 'GRUPO LOPTEZ E.I.R.L.', '20604079030'),
+('CE1009', 'MB GEOSAVIC SAC', '20456331361'),
+('CE1010', 'TIENDAS SUMINISTROS E.I.R.L.', '20393285771'),
+('CE1011', 'ORPORACION MLD S.A.C.', '20519217555'),
+('CE1012', 'AQUA TERRA INGENIEROS CONSULTORES S.A.C.',
+'20602786391'),
+('CE1013', 'HARO INGENIEROS E.I.R.L.', '20378061297'),
+('CE1014', 'H&C CONTRATISTAS GENERALES S.R.L.', '20363853162'),
+('CE1015', 'CYSTRANS PERU S.R.L.', '20604736596'),
+('CE1016', 'ERFORADORA ALEMANA S.A.C.', '20100677408'),
+('CE1017', 'LADRILLERA EL DIAMANTE S.A.C.', '20120877055'),
+('CE1018', 'TELEFONICA DEL PERU SAA', '20100017491'),
+('CE1019', 'CONSTRUCTORA UPACA S A', '20101031854'),
+('CE1020', 'IMPRESIONES Y UTILES SAC', '20112091221'),
+('CE1021', 'DISTRIBUIDORA ABARROTERA DEL SUR EIRL', '20115190165'),
+('CE1022', 'TECNOLOGIA DE MATERIALES S.A.', '20123531389'),
+('CE1023', 'UNIVERSIDAD NACIONAL DEL ALTIPLANO PUNO',
+'20145496170'),
+('CE1024', 'SVENZA ZONA FRANCA S.R.L.', '20164486720'),
+('CE1025', 'TOTAL ARTEFACTOS SA', '20331429601'),
+('CE1026', 'VIDRIERIA 28 DE JULIO S C R LTDA', '20224545526'),
+('CE1027', 'SERVICENTRO JOMAFRI S. R. L.', '20230397709'),
+('CE1028', 'CARFIO SERVICIO DE TRANSPORTE INTERNACIONAL',
+'20231886517'),
+Pág. 84
+INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS COMPUTACIONALES
+('CE1029', 'GUIDO VALDEZ IMPORT EXPORT S.A', '20318231703'),
+('CE1030', 'COMSATEL PERU SAC', '20330096749');
+-- --------------------------------------------------------
+--
+-- Estructura de tabla para la tabla `ventasxempleado`
+--
+CREATE TABLE `ventasxempleado` (
+ `IdVenta` varchar(10) NOT NULL,
+ `IdEmpleado` varchar(10) NOT NULL,
+ `IdEmpresa` varchar(10) NOT NULL,
+ `Monto` float NOT NULL,
+ `FechaVenta` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4
+COLLATE=utf8mb4_general_ci;
+--
+-- Volcado de datos para la tabla `ventasxempleado`
+--
+INSERT INTO `ventasxempleado` (`IdVenta`, `IdEmpleado`, `IdEmpresa`,
+`Monto`, `FechaVenta`) VALUES
+('V0001', 'E001', 'CE1001', 2000, '2023-03-12'),
+('V0002', 'E001', 'CE1002', 4000, '2023-02-28'),
+('V0003', 'E003', 'CE1003', 5000, '2023-03-31'),
+('V0004', 'E004', 'CE1004', 1200, '2022-12-19'),
+('V0005', 'E005', 'CE1005', 5020, '2022-10-30'),
+('V0006', 'E006', 'CE1006', 2300, '2023-04-30'),
+('V0007', 'E002', 'CE1007', 5000, '2023-03-01'),
+('V0008', 'E003', 'CE1008', 1200, '2023-01-06'),
+('V0009', 'E006', 'CE1009', 5400, '2022-10-11'),
+('V0010', 'E007', 'CE1010', 1500, '2023-05-24'),
+('V0011', 'E015', 'CE1021', 282, '2022-01-19'),
+('V0012', 'E005', 'CE1023', 2098, '2021-09-24'),
+('V0013', 'E010', 'CE1023', 1184, '2021-07-24'),
+('V0014', 'E020', 'CE1004', 2503, '2021-10-18'),
+('V0015', 'E025', 'CE1012', 915, '2022-06-11'),
+('V0016', 'E001', 'CE1006', 841, '2022-02-02'),
+('V0017', 'E015', 'CE1019', 462, '2022-12-19'),
+('V0018', 'E007', 'CE1018', 219, '2022-06-11'),
+('V0019', 'E022', 'CE1020', 978, '2023-05-23'),
+('V0020', 'E023', 'CE1013', 1126, '2021-07-22'),
+('V0021', 'E002', 'CE1027', 2156, '2022-12-09'),
+('V0022', 'E016', 'CE1030', 2689, '2022-09-19'),
+('V0023', 'E011', 'CE1009', 358, '2023-03-11'),
+('V0024', 'E025', 'CE1029', 1513, '2022-12-13'),
+Pág. 85
+INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS COMPUTACIONALES
+('V0025', 'E027', 'CE1011', 1948, '2021-07-24'),
+('V0026', 'E009', 'CE1028', 2850, '2022-04-13'),
+('V0027', 'E012', 'CE1027', 726, '2023-04-09'),
+('V0028', 'E016', 'CE1029', 2569, '2022-05-23'),
+('V0029', 'E024', 'CE1008', 2381, '2022-03-13'),
+('V0030', 'E001', 'CE1012', 2461, '2021-06-21'),
+('V0031', 'E012', 'CE1008', 408, '2022-09-05'),
+('V0032', 'E012', 'CE1007', 1485, '2022-04-06'),
+('V0033', 'E020', 'CE1007', 491, '2022-05-17'),
+('V0034', 'E016', 'CE1010', 856, '2022-11-26'),
+('V0035', 'E009', 'CE1030', 128, '2022-01-18'),
+('V0036', 'E017', 'CE1009', 2128, '2021-06-24'),
+('V0037', 'E007', 'CE1019', 1043, '2023-01-23'),
+('V0038', 'E010', 'CE1014', 2298, '2021-12-03'),
+('V0039', 'E024', 'CE1009', 1065, '2021-09-29'),
+('V0040', 'E002', 'CE1015', 1985, '2022-03-01'),
+('V0041', 'E021', 'CE1002', 948, '2022-12-18'),
+('V0042', 'E015', 'CE1020', 2659, '2021-12-05'),
+('V0043', 'E001', 'CE1017', 1640, '2022-09-22'),
+('V0044', 'E013', 'CE1003', 683, '2022-10-07'),
+('V0045', 'E004', 'CE1008', 2826, '2022-01-01'),
+('V0046', 'E010', 'CE1007', 818, '2022-12-14'),
+('V0047', 'E015', 'CE1019', 2430, '2022-07-09'),
+('V0048', 'E025', 'CE1018', 1385, '2021-10-10'),
+('V0049', 'E008', 'CE1005', 2987, '2022-07-06'),
+('V0050', 'E002', 'CE1023', 2220, '2022-07-10'),
+('V0051', 'E014', 'CE1027', 1181, '2021-08-18'),
+('V0052', 'E015', 'CE1001', 274, '2021-11-19'),
+('V0053', 'E015', 'CE1029', 2888, '2022-07-14'),
+('V0054', 'E020', 'CE1001', 1915, '2022-11-20'),
+('V0055', 'E010', 'CE1001', 2565, '2022-11-20'),
+('V0056', 'E002', 'CE1011', 2541, '2021-12-09'),
+('V0057', 'E021', 'CE1029', 900, '2022-09-08'),
+('V0058', 'E015', 'CE1024', 1003, '2022-10-23'),
+('V0059', 'E002', 'CE1001', 1575, '2021-12-12'),
+('V0060', 'E019', 'CE1011', 2151, '2023-05-10'),
+('V0061', 'E026', 'CE1019', 222, '2023-02-11'),
+('V0062', 'E014', 'CE1003', 2033, '2023-02-23'),
+('V0063', 'E006', 'CE1018', 1604, '2022-05-23'),
+('V0064', 'E018', 'CE1015', 533, '2021-07-26'),
+('V0065', 'E011', 'CE1023', 132, '2022-03-05'),
+('V0066', 'E018', 'CE1016', 862, '2022-01-18'),
+('V0067', 'E017', 'CE1002', 232, '2021-11-28'),
+('V0068', 'E002', 'CE1003', 2436, '2022-12-13'),
+('V0069', 'E027', 'CE1026', 1505, '2021-06-24'),
+('V0071', 'E011', 'CE1014', 682, '2022-07-10'),
+('V0072', 'E015', 'CE1014', 559, '2023-05-05'),
+Pág. 86
+INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS COMPUTACIONALES
+('V0070', 'E023', 'CE1003', 398, '2023-04-14'),('V0073', 'E025', 'CE1005', 1229,
+'2022-11-24'),
+('V0074', 'E012', 'CE1010', 2187, '2021-08-13'),
+('V0075', 'E020', 'CE1012', 2440, '2022-09-21'),
+('V0076', 'E006', 'CE1005', 2777, '2022-07-30'),
+('V0077', 'E025', 'CE1020', 2523, '2022-12-28'),
+('V0078', 'E011', 'CE1030', 1874, '2022-05-19'),
+('V0079', 'E006', 'CE1017', 2692, '2022-11-25'),
+('V0080', 'E026', 'CE1030', 572, '2022-08-21'),
+('V0081', 'E012', 'CE1015', 1711, '2023-05-09'),
+('V0082', 'E023', 'CE1028', 1916, '2022-11-22'),
+('V0083', 'E027', 'CE1007', 1790, '2022-04-27'),
+('V0084', 'E025', 'CE1003', 1617, '2021-12-08'),
+('V0085', 'E006', 'CE1006', 2557, '2022-07-22'),
+('V0086', 'E009', 'CE1011', 2278, '2022-03-31'),
+('V0087', 'E002', 'CE1013', 451, '2022-12-25'),
+('V0088', 'E019', 'CE1011', 2307, '2021-11-19'),
+('V0089', 'E014', 'CE1007', 2636, '2022-03-03'),
+('V0090', 'E022', 'CE1021', 154, '2021-07-09'),
+('V0091', 'E003', 'CE1003', 1026, '2022-08-24'),
+('V0092', 'E005', 'CE1019', 2989, '2022-04-09'),
+('V0093', 'E011', 'CE1008', 2592, '2022-04-09'),
+('V0094', 'E013', 'CE1026', 702, '2023-01-29'),
+('V0095', 'E001', 'CE1029', 2515, '2022-03-08'),
+('V0096', 'E011', 'CE1002', 555, '2021-08-16'),
+('V0097', 'E002', 'CE1013', 1129, '2022-11-20'),
+('V0098', 'E026', 'CE1028', 694, '2021-08-18'),
+('V0099', 'E010', 'CE1021', 2861, '2022-11-28'),
+('V0100', 'E016', 'CE1010', 1893, '2022-06-30'),
+('V0101', 'E018', 'CE1006', 2766, '2021-11-20'),
+('V0102', 'E001', 'CE1021', 2325, '2022-08-23'),
+('V0103', 'E018', 'CE1004', 2211, '2021-12-12'),
+('V0104', 'E006', 'CE1015', 1627, '2022-03-07'),
+('V0105', 'E004', 'CE1011', 404, '2021-06-15'),
+('V0106', 'E015', 'CE1016', 1943, '2022-04-12'),
+('V0107', 'E017', 'CE1024', 2152, '2022-05-02'),
+('V0108', 'E007', 'CE1005', 1848, '2021-11-26'),
+('V0109', 'E011', 'CE1005', 325, '2022-10-07'),
+('V0110', 'E023', 'CE1001', 709, '2022-09-26'),
+('V0111', 'E010', 'CE1011', 218, '2021-09-10'),
+('V0112', 'E023', 'CE1024', 1543, '2021-12-24'),
+('V0113', 'E016', 'CE1020', 284, '2023-01-05'),
+('V0114', 'E009', 'CE1008', 292, '2022-09-23'),
+('V0115', 'E018', 'CE1025', 1621, '2023-04-19'),
+('V0116', 'E012', 'CE1025', 1423, '2022-02-08'),
+('V0117', 'E020', 'CE1014', 1281, '2022-01-04'),
+('V0118', 'E010', 'CE1023', 1038, '2022-11-19'),
+('V0119', 'E015', 'CE1017', 1039, '2022-11-21'),
+Pág. 87
+INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS COMPUTACIONALES
+('V0120', 'E023', 'CE1023', 1969, '2022-07-05'),
+('V0121', 'E026', 'CE1010', 1048, '2022-11-13'),
+('V0122', 'E025', 'CE1026', 1504, '2023-01-30'),
+('V0123', 'E025', 'CE1026', 830, '2022-11-30'),
+('V0124', 'E002', 'CE1006', 1970, '2023-05-22'),
+('V0125', 'E003', 'CE1026', 2647, '2022-07-23'),
+('V0126', 'E016', 'CE1009', 2215, '2023-04-03'),
+('V0127', 'E003', 'CE1014', 248, '2021-08-13'),
+('V0128', 'E021', 'CE1026', 1183, '2021-08-15'),
+('V0129', 'E016', 'CE1029', 201, '2022-12-13'),
+('V0130', 'E011', 'CE1023', 2350, '2021-12-23'),
+('V0131', 'E021', 'CE1018', 1997, '2021-08-14'),
+('V0132', 'E027', 'CE1004', 1471, '2022-08-16'),
+('V0133', 'E001', 'CE1027', 2605, '2022-01-25'),
+('V0134', 'E027', 'CE1007', 2171, '2021-12-14'),
+('V0135', 'E021', 'CE1007', 946, '2021-10-15'),
+('V0136', 'E009', 'CE1012', 834, '2021-11-04');
+--
+-- Índices para tablas volcadas
+--
+--
+-- Indices de la tabla `empleado`
+--
+ALTER TABLE `empleado`
+ ADD PRIMARY KEY (`IdEmpleado`);
+--
+-- Indices de la tabla `empresacliente`
+--
+ALTER TABLE `empresacliente`
+ ADD PRIMARY KEY (`IdEmpresa`);
+--
+-- Indices de la tabla `ventasxempleado`
+--
+ALTER TABLE `ventasxempleado`
+ ADD PRIMARY KEY (`IdVenta`),
+ ADD KEY `FK_IdEmpleado` (`IdEmpleado`),
+ ADD KEY `FK_IdEmpresa` (`IdEmpresa`);
+--
+-- Restricciones para tablas volcadas
+--
+--
+-- Filtros para la tabla `ventasxempleado`
+Pág. 88
+INTRODUCCIÓN A LA INGENIERÍA DE SISTEMAS COMPUTACIONALES
+--
+ALTER TABLE `ventasxempleado`
+ ADD CONSTRAINT `FK_IdEmpleado` FOREIGN KEY (`IdEmpleado`)
+REFERENCES `empleado` (`IdEmpleado`),
+ ADD CONSTRAINT `FK_IdEmpresa` FOREIGN KEY (`IdEmpresa`)
+REFERENCES `empresacliente` (`IdEmpresa`);
+COMMIT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT
+*/;
+/*!40101 SET
+CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION
+*/;

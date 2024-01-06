@@ -1,0 +1,378 @@
+@font-face {
+    font-family: Rounded-Mplus-1c-Bold;
+    src: url(fuentes/RoundedMplus1c-Bold.ttf);
+}
+
+@font-face {
+    font-family: Quicksand_Bold;
+    src: url(fuentes/Quicksand_Bold.otf);
+}
+
+* {
+    font-family: 'Rounded-Mplus-1c-Bold';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+header {
+    position: absolute;
+    width: 100%; 
+    height: 120px;
+    background-color: #E77A2C;
+}
+
+header p{
+    position: absolute;
+    top: 70px;
+    left: 40px;
+    color: #FFFFFF;
+    font-family: 'Quicksand_Bold';
+    letter-spacing: 10px;
+    font-size: 30px;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    background-color: #EBEAEA;
+}
+
+.container{
+    position: absolute;
+    top: 350px;
+    right: 190px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 8px 8px 5px 0px #c7c7c7;
+    width: 1500px;
+    height: 530px;
+    background-color: #ffffff;
+    border-radius: 30px;
+}
+
+.table_header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px 0;
+}
+.imput_search{
+    position: relative;
+}
+input{
+    background-color: #EBEAEA;
+    border-radius: 30px;
+    width: 400px;
+    outline: none;
+    padding: 10px 20px;
+    border: 1px solid #c9c9c9;
+    box-sizing: border-box;
+    padding-right: 60px;
+    cursor: auto;
+    box-shadow: 4px 4px 2.5px 0px #c7c7c7;
+}
+
+.search{
+
+    position: relative;
+    top: 20px;
+    right: -1240px;
+    margin-right: 1rem;
+    transform: translate(-50%, -50%);
+}
+
+#search{
+    position: absolute;
+    top : 50%;
+    right: 0px;
+    margin-right: 1rem;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+input[type="search"]::placeholder {
+
+    font-family: 'Rounded-Mplus-1c-Bold';
+    color: #4D4D4D;
+    font-size: 18px;
+}
+
+.ventas{
+    position: absolute;
+    color: #383838;
+    font-size: 30px;
+    font-weight: bold; 
+}
+
+table {
+    border-spacing: 0;
+    margin-top: 1rem;
+}
+
+table thead {
+    height: 35px;
+    background-color: #FFE58A;
+    text-align: center;
+    font-weight: bold;
+}
+
+table thead td:nth-child(1) {
+    width: 290px;
+}
+
+table thead td:nth-child(2) {
+
+    width: 310px;
+    height: 35px;
+    background-color: #fff7b3;
+}
+
+table thead td:nth-child(3) {
+    width: 300px;
+}
+
+table thead td:nth-child(4) {
+    width: 290px;
+    height: 35px;
+    background-color: #fff7b3;
+}
+
+table thead td:nth-child(5) {
+    width: 310px;
+}
+
+table thead th {
+    padding: 10px;
+}
+
+table tbody tr td {
+    width: 297px;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.table-container .fila-hover.hovered {
+    background-color: #f5f5f5;
+  }
+
+.table_fotter{
+    position: relative;
+    color: #4D4D4D;
+    right: -1080px;
+    margin-top: 1rem;
+    padding: 0 30px 20px;
+    width: 250px;
+}
+
+.table_fotter p{
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    position: absolute;
+    top: 7px;
+    right: 20px;
+    color: #FFFFFF;
+    font-family: 'Quicksand_Bold';
+    letter-spacing: 5px;
+    font-size: 20px;
+    background-color: #D05916;
+    border-radius: 30px;
+    width: 300px;
+    height: 40px;
+    outline: none;
+    padding: 7px 20px;
+    border: 1px solid #D05916;
+    box-sizing: border-box;
+    padding-right: 60px;
+    cursor: pointer;
+
+}
+
+a:hover {
+    background-color: #a54711;
+}
+
+.table-container {
+    height: 500px;
+    overflow: auto;
+  }
+
+.table-fixed tbody{
+    height: 340px;
+    overflow: auto;
+    width: 1500px;
+}
+
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed th{
+    display: inline-block;
+}
+
+#salir{
+
+    position: absolute;
+    color: #ffffff;
+    font-size: 200%;
+    right: 40px;
+    top: 1px;
+    cursor: pointer;
+}
+
+.check{
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: 33px;
+    left: 21%;
+}
+
+.user{
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    top: 110px;
+    right: 1450px;
+}
+
+.IdEmpleado{
+    position: absolute;
+    top: 120px;
+    right: 880px;
+    font-size: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 350px;
+    height: 50px;
+    outline: none;
+    padding: 5px 20px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    padding-right: 60px;
+    box-shadow: 4px 4px 2.5px 0px #c7c7c7;
+    color: #303030;
+}
+.IdEmpleadop{
+    position: absolute;
+    color : #4D4D4D;
+    top: 127px;
+    right: 1340px;
+    font-size: 30px;
+}
+
+.NombreEmpleado{
+    position: absolute;
+    top: 220px;
+    right: 880px;
+    font-size: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 350px;
+    height: 50px;
+    outline: none;
+    padding: 5px 20px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    padding-right: 60px;
+    box-shadow: 4px 4px 2.5px 0px #c7c7c7;
+    color: #303030;
+}
+
+.NombreEmpleadop{
+    position: absolute;
+    color : #4D4D4D;
+    top: 227px;
+    right: 1260px;
+    font-size: 30px;
+}
+
+.Departamento{
+    position: absolute;
+    top: 120px;
+    right: 250px;
+    font-size: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 350px;
+    height: 50px;
+    outline: none;
+    padding: 5px 20px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    padding-right: 60px;
+    box-shadow: 4px 4px 2.5px 0px #c7c7c7;
+    color: #303030;
+}
+
+.Departamentop{
+    position: absolute;
+    color : #4D4D4D;
+    top: 127px;
+    right: 715px;
+    font-size: 30px;
+}
+
+.Supervisor{
+    position: absolute;
+    top: 220px;
+    right: 250px;
+    font-size: 30px;
+    font-size: 25px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 350px;
+    height: 50px;
+    outline: none; 
+    padding: 5px 20px;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+    padding-right: 60px;
+    box-shadow: 4px 4px 2.5px 0px #c7c7c7;
+    color: #303030;
+}
+
+.Supervisorp{
+    position: absolute;
+    color : #4D4D4D;
+    top: 227px;
+    right: 625px;
+    font-size: 30px;
+}
+
+.MontoTotal{
+    position: absolute;
+    color: #4D4D4D;
+    z-index: 2;
+    top: 823.5px;
+    right: 248px;
+    font-size: 20px;
+    background-color: #EBEAEA;
+    border-radius: 15px;
+    width: 180px;
+    height: 40px;
+    outline: none;
+    padding: 5px 20px;
+    border: 1px solid #EBEAEA;
+    box-sizing: border-box;
+    padding-right: 60px;
+    box-shadow: 4px 4px 2.5px 0px #c7c7c7;
+    color: #303030;
+}
+
+#regresar{
+
+    position: absolute;
+    color: #ffffff;
+    font-size: 190%;
+    right: 365px;
+    z-index: 4;
+    top: 5px;
+    cursor: pointer;
+}
